@@ -3,7 +3,7 @@ import { DatabaseEngineItem } from '@sonolus/core'
 export { csvToLevelData } from './csv/convert.js'
 export * from './csv/index.js'
 
-export const version = '0.0.1'
+export const version = '0.0.2'
 
 export const databaseEngineItem = {
     name: 'cgss',

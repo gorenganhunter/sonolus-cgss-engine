@@ -1,92 +1,45 @@
-# Sonolus.js Template (TS + ESLint + Prettier)
+# Sonolus CGSS Engine
 
-## Prerequisites
+A recreation of THE iDOLM@STER CINDERELLA GIRLS STARLIGHT STAGE engine in Sonolus.
 
--   [Node.js](https://nodejs.org) (16+)
+## Links
 
-## Recommended Setup
+-   [Sonolus Website](https://sonolus.com)
+-   [Sonolus Wiki](https://github.com/NonSpicyBurrito/sonolus-wiki)
 
--   [Visual Studio Code](https://code.visualstudio.com)
--   [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-
-## Get Started
-
-To get this template, run (change `my-project` to desired name):
+## Installation
 
 ```
-npx degit Sonolus/sonolus.js-template-ts-eslint-prettier my-project
+npm install sonolus-cgss-engine
 ```
 
-To install dependencies, run in project directory:
+## Documentation
 
-```
-npm i
-```
+### `version`
 
-## Start Dev Server
+Package version.
 
-Run in project directory:
+### `databaseEngineItem`
 
-```
-npm run dev:play
-```
+Partial database engine item compatible with [sonolus-express](https://github.com/NonSpicyBurrito/sonolus-express).
 
-```
-npm run dev:watch
-```
+### `csvToLevelData(chart, offset?, circleType?)`
 
-```
-npm run dev:preview
-```
+Converts D4DJ (bangbangboom-editor) chart to Level Data.
 
-```
-npm run dev:tutorial
-```
+-   `chart`: D4DJ chart.
+-   `offset`: offset (default: `0`).
+-   `circleType`: circle type (default: `4`)
 
-A dev server will be up and running. You can connect to it using Sonolus app and play test the level.
+### Assets
 
-Changes made to the project will be automatically detected and trigger rebuild.
+The following assets are exposed as package entry points:
 
-Temporary files and extraction artifacts can be found in `.dev`.
+-   `EngineConfiguration`
+-   `EnginePlayData`
+-   `EngineWatchData`
+-   `EnginePreviewData`
+-   `EngineTutorialData`
+-   `EngineThumbnail`
 
-## Format Code
-
-Run in project directory:
-
-```
-npm run format
-```
-
-## Type Check
-
-Run in project directory:
-
-```
-npm run type-check
-```
-
-## Lint
-
-Run in project directory:
-
-```
-npm run lint
-```
-
-## Fix Linting Issues
-
-Run in project directory:
-
-```
-npm run lint-fix
-```
-
-## Build
-
-Run in project directory:
-
-```
-npm run build
-```
-
-Build artifacts can be found in `dist`.
+In Node.js, you can obtain path to assets using `require.resolve('sonolus-d4dj-engine/EngineConfiguration')` or `import.meta.resolve('sonolus-d4dj-engine/EngineConfiguration')`.

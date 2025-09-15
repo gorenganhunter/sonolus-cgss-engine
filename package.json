@@ -1,6 +1,6 @@
 {
   "name": "sonolus-cgss-engine",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A recreation of THE iDOLM@STER CINDERELLA GIRLS STARLIGHT STAGE engine in Sonolus.",
   "type": "module",
   "author": "Gorengan Hunter",
