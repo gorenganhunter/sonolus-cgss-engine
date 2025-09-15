@@ -2,8 +2,6 @@ import { hash } from '@sonolus/core'
 import { error, log } from 'node:console'
 import { copyFileSync, readFileSync } from 'node:fs'
 
-const db = JSON.parse(readFileSync("./db.json", "utf8"))
-
 /** @type {import('@sonolus/sonolus.js').SonolusCLIConfig} */
 export default {
     type: 'watch',
@@ -17,6 +15,8 @@ export default {
                 hash: hash(readFileSync('./.dev/bgm.mp3')),
                 url: '/bgm.mp3',
             }
+
+            const db = JSON.parse(readFileSync("./db.json", "utf8"))
 
             sonolus.level.items.push(...db.levels.map(l => ({ ...l, engine: level.engine })))
         } catch (err) {
