@@ -62,7 +62,7 @@ for (const file of Object.keys(files)) {
     const path = files[file]
     const buffer = fs.readFileSync(path)
     const hashed = hash(buffer)
-    fs.rmSync(`./cgss-sonolus-data/${db.engines[0][file].hash}`)
+    fs.rmSync(`./cgss-sonolus-data/${db.engines[0][file].hash}`, { force: true })
     fs.writeFileSync(`./cgss-sonolus-data/${hashed}`, buffer)
     engine[file] = {
         hash: hashed,
