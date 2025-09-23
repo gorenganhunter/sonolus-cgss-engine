@@ -25,7 +25,7 @@ export class SlideTickNote extends SlideNote {
     touch() {
         if (!this.hasInput) return
 
-        const id = this.prevSharedMemory.activatedTouchId
+        const id = this.firstSharedMemory.activatedTouchId
         if (id) {
             for (const touch of touches) {
                 if (touch.id !== id) continue
@@ -64,7 +64,19 @@ export class SlideTickNote extends SlideNote {
     updateSequential() {
         super.updateSequential()
 
+        if (!this.hasInput) return
+
         if (this.hitTime && time.now >= this.targetTime) this.complete(this.prevSharedMemory.activatedTouchId, this.hitTime)
+
+        if (this.prevInfo.state !== EntityState.Despawned) return
+        //if (this.firstSharedMemory.activatedTouchId) return
+        for (const touch of touches) {
+            if (touch.id === this.firstSharedMemory.activatedTouchId) {
+                if (!touch.ended) return
+                else this.incomplete(time.now)
+            }
+        }
+        this.incomplete(time.now)
     }
 
     complete(id: TouchId, hitTime: number) {

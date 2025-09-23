@@ -19,6 +19,7 @@ export default {
             const db = JSON.parse(readFileSync("./db.json", "utf8"))
 
             sonolus.level.items.push(...db.levels.map(l => ({ ...l, engine: level.engine })))
+            sonolus.background.items.push(...db.backgrounds)
         } catch (err) {
             error('Error: failed to setup bgm, using fallback')
             log(err)

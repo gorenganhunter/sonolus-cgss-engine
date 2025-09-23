@@ -51,4 +51,8 @@ export abstract class SlideNote extends Note {
     get prevSharedMemory() {
         return this.sharedMemory.get(this.slideImport.prevRef)
     }
+
+    get firstSharedMemory() {
+        return this.sharedMemory.get(this.slideImport.firstRef)
+    }
 }
