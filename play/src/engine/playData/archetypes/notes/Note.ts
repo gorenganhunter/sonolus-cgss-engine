@@ -66,7 +66,7 @@ export abstract class Note extends Archetype {
             good: toMs(this.windows.good),
         })
 
-        this.life.miss = -40
+        this.life.miss = -80
     }
 
     preprocess() {

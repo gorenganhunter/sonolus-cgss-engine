@@ -31,6 +31,12 @@ export class FlickNote extends Note {
         // debug.log(5555)
     }
 
+    globalPreprocess(): void {
+        super.globalPreprocess()
+
+        this.life.miss = -40
+    }
+
     touch() {
         if (!this.hasInput) return
 
