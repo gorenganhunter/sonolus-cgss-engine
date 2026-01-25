@@ -85,7 +85,7 @@ export abstract class Note extends Archetype {
 
         if (this.shouldScheduleSFX) this.scheduleSFX()
 
-        new Rect({ l: this.import.lane - 0.5, r: this.import.lane + 0.5, t: 0, b: 2 }).transform(skin.transform).copyTo(this.hitbox)
+        new Rect({ l: this.import.lane === -2 ? -30 : this.import.lane - 0.5, r: this.import.lane === 2 ? 30 : this.import.lane + 0.5, t: 0, b: 2 }).transform(skin.transform).copyTo(this.hitbox)
     }
 
     spawnOrder() {
