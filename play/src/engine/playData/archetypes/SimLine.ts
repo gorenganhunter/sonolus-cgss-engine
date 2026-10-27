@@ -153,6 +153,6 @@ export class SimLine extends Archetype {
         //     y4: y.r - 0.02 * s.r
         // })
 
-        skin.sprites.simLine.draw(layout, getZ(layer.simline, this.targetTime, this.left.lane), 1)
+        skin.sprites.simLine.draw(layout, [getZ(layer.simline, this.targetTime, this.left.lane)], 1)
     }
 }

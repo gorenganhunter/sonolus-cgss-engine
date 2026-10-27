@@ -66,10 +66,11 @@ export abstract class Note extends Archetype {
             good: toMs(this.windows.good),
         })
 
-        this.life.miss = -80
     }
 
     preprocess() {
+        this.archetypeLife.miss = -80
+
         this.targetTime = bpmChanges.at(this.import.beat).time
 
         this.visualTime.copyFrom(Range.l.mul(note.duration).add(timeScaleChanges.at(this.targetTime).scaledTime))
@@ -154,7 +155,7 @@ export abstract class Note extends Archetype {
         const w = 0.25 * this.s
         const h = w * scaledScreen.wToH
 
-        this.sprite.draw(new Rect({ l: this.x - w, r: this.x + w, t: this.y - h, b: this.y + h }), this.note.z, 1)
+        this.sprite.draw(new Rect({ l: this.x - w, r: this.x + w, t: this.y - h, b: this.y + h }), [this.note.z], 1)
     }
 
     playSFX() {

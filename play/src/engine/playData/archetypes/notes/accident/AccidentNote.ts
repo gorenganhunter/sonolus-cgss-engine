@@ -22,7 +22,7 @@ export class AccidentNote extends Note {
     shouldQuit = this.entityMemory(Boolean)
 
     globalPreprocess() {
-        this.life.miss = -40
+        this.archetypeLife.miss = -40
     }
 
     touch() {

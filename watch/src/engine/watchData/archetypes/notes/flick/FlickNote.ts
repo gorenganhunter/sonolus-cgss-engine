@@ -23,8 +23,8 @@ export class FlickNote extends Note {
         const w = 0.25 * this.s
         const h = w * scaledScreen.wToH
 
-        if (this.flickImport.direction < 0) skin.sprites.flickLeftNote.draw(new Rect({ l: this.x - w * 1.4, r: this.x + w, t: this.y - h, b: this.y + h }), this.note.z, 1)
-        else skin.sprites.flickRightNote.draw(new Rect({ l: this.x - w, r: this.x + w * 1.4, t: this.y - h, b: this.y + h }), this.note.z, 1)
+        if (this.flickImport.direction < 0) skin.sprites.flickLeftNote.draw(new Rect({ l: this.x - w * 1.4, r: this.x + w, t: this.y - h, b: this.y + h }), [this.note.z], 1)
+        else skin.sprites.flickRightNote.draw(new Rect({ l: this.x - w, r: this.x + w * 1.4, t: this.y - h, b: this.y + h }), [this.note.z], 1)
     }
 
     //     get tailImport() {

@@ -2,7 +2,7 @@ import { EngineArchetypeDataName } from "@sonolus/core"
 import { note } from "../../note"
 import { options } from "../../../configuration/options"
 import { getZ, layer, skin } from "../../skin"
-import { easeInBack } from "../../../../../../shared/src/engine/data/utils"
+// import { easeInBack } from "../../../../../../shared/src/engine/data/utils"
 import { scaledScreen } from "../../scaledScreen"
 import { getSpriteId } from "../../../../../../shared/src/engine/data/decorator"
 
@@ -100,13 +100,13 @@ export class Decorator extends Archetype {
             y2: this.y + h,
             y3: this.y + h,
             y4: this.y,
-        }), this.note.z, 1)
+        }), [this.note.z], 1)
     }
 
     drawTop() {
         const w = 0.25 * this.s
         const h = w * scaledScreen.wToH
 
-        skin.sprites.draw(this.sprite, new Rect({ l: this.x - w, r: this.x + w, t: this.y - h, b: this.y }), this.note.z, 1)
+        skin.sprites.draw(this.sprite, new Rect({ l: this.x - w, r: this.x + w, t: this.y - h, b: this.y }), [this.note.z], 1)
     }
 }

@@ -59,7 +59,7 @@ export class FlickConnector extends BaseConnector {
             y4: (y1 - yS.min),
         }
 
-        skin.sprites.draw(this.sprite.connector, layout, this.connector.z, options.connectorAlpha)
+        skin.sprites.draw(this.sprite.connector, layout, [this.connector.z], options.connectorAlpha)
     }
 
     get shouldScheduleSFX() {

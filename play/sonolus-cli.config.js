@@ -20,6 +20,7 @@ export default {
 
             sonolus.level.items.push(...db.levels.map(l => ({ ...l, engine: level.engine })))
             sonolus.background.items.push(...db.backgrounds)
+            sonolus.skin.items = db.skins
         } catch (err) {
             error('Error: failed to setup bgm, using fallback')
             log(err)

@@ -7,6 +7,10 @@ import { scaledScreen } from "../scaledScreen"
 import { skin } from "../skin"
 
 export class Initialization extends Archetype {
+    import = this.defineImport({
+        noteCount: { name: "noteCount", type: Number },
+    })
+
     preprocess() {
         const noteRadius = 0.2 //  * options.noteSize
         const judgeLineY = -0.675
@@ -37,7 +41,13 @@ export class Initialization extends Archetype {
         score.base.set({
             perfect: 1,
             great: 0.7,
-            good: 0.1,
+            good: 0.4,
+        })
+
+        score.consecutive.great.set({
+            cap: 2,
+            multiplier: 0.05,
+            step: this.import.noteCount / 20
         })
 
         note.radius = noteRadius / h

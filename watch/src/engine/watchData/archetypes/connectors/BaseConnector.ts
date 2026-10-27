@@ -300,7 +300,7 @@ export class BaseConnector extends Archetype {
 
             debug.log(a)
 
-            skin.sprites.draw(this.sprite.connector, layout, this.connector.z, a * options.connectorAlpha/*, "lr", 16, { x: 0.5, y: 1 }, { x: 1, y: 1 }*/)
+            skin.sprites.draw(this.sprite.connector, layout, [this.connector.z], a * options.connectorAlpha/*, "lr", 16, { x: 0.5, y: 1 }, { x: 1, y: 1 }*/)
         }
     }
 
@@ -318,7 +318,7 @@ export class BaseConnector extends Archetype {
                 b: (this.slide.b - 1) * size + 1,
                 t: (this.slide.t - 1) * size + 1,
             }),
-            this.slide.z,
+            [this.slide.z],
             1,
         )
     }

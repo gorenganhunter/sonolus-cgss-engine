@@ -7,6 +7,10 @@ import { scaledScreen } from "../scaledScreen"
 import { skin } from "../skin"
 
 export class Initialization extends Archetype {
+    import = this.defineImport({
+        noteCount: { name: "noteCount", type: Number },
+    })
+
     preprocess() {
         const noteRadius = 0.2 //  * options.noteSize
         const judgeLineY = -0.675
@@ -38,6 +42,12 @@ export class Initialization extends Archetype {
             perfect: 1,
             great: 0.7,
             good: 0.1,
+        })
+
+        score.consecutive.great.set({
+            cap: 2,
+            multiplier: 0.05,
+            step: this.import.noteCount / 20
         })
 
         note.radius = noteRadius / h
@@ -131,7 +141,7 @@ export class Initialization extends Archetype {
             background: false,
         })
 
-        ui.progress.set({
+        ui.progress.bar.set({
             anchor: screen.rect.lb.add(new Vec(0.05, 0.05)),
             pivot: { x: 0, y: 0 },
             size: { x: screen.rect.w - 0.1, y: 0.15 * ui.configuration.progress.scale },

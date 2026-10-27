@@ -135,10 +135,10 @@ export class DecoratorConnector extends BaseConnector {
                         : 1
 
             if (this.sprite.connector === this.sprite.connector2) {
-                skin.sprites.draw(this.sprite.connector, layout, this.connector.z, 1 * a)
+                skin.sprites.draw(this.sprite.connector, layout, [this.connector.z], 1 * a)
             } else {
-                skin.sprites.draw(this.sprite.connector, layout, this.connector.z, (1 - (i + 0.5) / div) * a)
-                skin.sprites.draw(this.sprite.connector2, layout, this.connector.z + 0.0000001, (i + 0.5) / div * a)
+                skin.sprites.draw(this.sprite.connector, layout, [this.connector.z], (1 - (i + 0.5) / div) * a)
+                skin.sprites.draw(this.sprite.connector2, layout, [this.connector.z + 0.0000001], (i + 0.5) / div * a)
             }
 
             if (i === 0 &&/* t1 === t.min &&*/ !this.headImport.prevRef) {
@@ -156,7 +156,7 @@ export class DecoratorConnector extends BaseConnector {
                     y2: -w,
                     y3: -w,
                     y4: 0
-                }).rotate(a + Math.PI).scale(1, scaledScreen.wToH).translate(x.min, y.min), this.connector.z, 1)
+                }).rotate(a + Math.PI).scale(1, scaledScreen.wToH).translate(x.min, y.min), [this.connector.z], 1)
             }
 
             if (i === div - 1/* && t2 === t.max */ && !this.tailImport.nextRef) {
@@ -174,7 +174,7 @@ export class DecoratorConnector extends BaseConnector {
                     y2: -w,
                     y3: -w,
                     y4: 0
-                }).rotate(a).scale(1, scaledScreen.wToH).translate(x.max, y.max), this.connector.z, 1)
+                }).rotate(a).scale(1, scaledScreen.wToH).translate(x.max, y.max), [this.connector.z], 1)
             }
         }
     }

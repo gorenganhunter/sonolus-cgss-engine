@@ -22,7 +22,7 @@ export class AccidentNote extends Note {
     })
 
     globalPreprocess() {
-        this.life.miss = -40
+        this.archetypeLife.miss = -80
     }
 
     get shouldScheduleSFX() {
