@@ -19,6 +19,13 @@ export class FlickNote extends Note {
         nextRef: { name: "next", type: Number }
     })
 
+    preprocess(): void {
+        super.preprocess()
+        this.archetypeLife.miss = -40
+
+        if (options.mirror) this.flickImport.direction *= -1
+    }
+
     drawNote(): void {
         const w = 0.25 * this.s
         const h = w * scaledScreen.wToH

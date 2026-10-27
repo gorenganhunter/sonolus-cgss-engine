@@ -34,6 +34,8 @@ export class FlickNote extends Note {
     preprocess() {
         super.preprocess()
         this.archetypeLife.miss = -40
+
+        if (options.mirror) this.flickImport.direction *= -1
     }
 
     touch() {

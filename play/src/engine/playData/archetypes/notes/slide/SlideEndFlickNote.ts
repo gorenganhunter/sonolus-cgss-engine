@@ -8,6 +8,7 @@ import { queueHold } from "../../HoldManager";
 import { windows } from "../../../../../../../shared/src/engine/data/windows";
 import { note } from "../../../note";
 import { calcV } from "../../FlickManager";
+import { options } from "../../../../configuration/options";
 
 export class SlideEndFlickNote extends SlideEndNote {
     sprite: SkinSprite = skin.sprites.flickLeftNote
@@ -22,6 +23,12 @@ export class SlideEndFlickNote extends SlideEndNote {
     })
 
     activatedTouch = this.entityMemory(TouchId)
+
+    preprocess() {
+        super.preprocess()
+        this.archetypeLife.miss = -40
+        if (options.mirror) this.flickImport.direction *= -1
+    }
 
     drawNote(): void {
         const w = 0.25 * this.s
