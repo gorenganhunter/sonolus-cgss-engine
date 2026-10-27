@@ -59,7 +59,7 @@ export class BaseConnector extends Archetype {
                 p4: pos.min.translate(pl.min + this.thickness * ps.min /* 0.7 * options.noteSize*/, 0),
             })
 
-            skin.sprites.connector.draw(layout, z, options.connectorAlpha)
+            skin.sprites.connector.draw(layout, [z], options.connectorAlpha)
         }
     }
 

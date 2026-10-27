@@ -25,7 +25,7 @@ export class SimLine extends Archetype {
         const b = -note.h / 4 //* options.noteSize
         const t = note.h / 4 //* options.noteSize
 
-        skin.sprites.simLine.draw(new Rect({ l, r, b, t }).add(pos), z, 1)
+        skin.sprites.simLine.draw(new Rect({ l, r, b, t }).add(pos), [z], 1)
     }
 
     get aImport() {

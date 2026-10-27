@@ -21,7 +21,7 @@ export class BarLine extends Archetype {
         const b = -note.h / 2 //* options.noteSize
         const t = note.h / 2 //* options.noteSize
 
-        skin.sprites.simLine.draw(new Rect({ l: -3.5, r: 3.5, b, t }).add(pos), z, 1)
+        skin.sprites.simLine.draw(new Rect({ l: -3.5, r: 3.5, b, t }).add(pos), [z], 1)
 
         print(time, time, PrintFormat.Time, 2, PrintColor.Theme, "left")
     }
