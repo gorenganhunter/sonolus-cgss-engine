@@ -39,7 +39,7 @@ export class Stage extends Archetype {
                     b,
                     t,
                 }),
-                layer.stage + 1,
+                [layer.stage + 1],
                 1,
             )
             skin.sprites.stageRightBorder.draw(
@@ -49,7 +49,7 @@ export class Stage extends Archetype {
                     b,
                     t,
                 }),
-                layer.stage + 1,
+                [layer.stage + 1],
                 1,
             )
 
@@ -73,8 +73,8 @@ export class Stage extends Archetype {
                     t
                 })
 
-                if ((j === 0 || j === 6) && skin.sprites.laneAlternative.exists) skin.sprites.laneAlternative.draw(layout, layer.stage, 1)
-                else skin.sprites.lane.draw(layout, layer.stage, 1)
+                if ((j === 0 || j === 6) && skin.sprites.laneAlternative.exists) skin.sprites.laneAlternative.draw(layout, [layer.stage], 1)
+                else skin.sprites.lane.draw(layout, [layer.stage], 1)
                 // }
             }
         }

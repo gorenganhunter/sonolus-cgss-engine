@@ -36,7 +36,7 @@ export abstract class Note extends Archetype {
                 b: -note.h * this.import.size / 100 /* options.noteSize*/,
                 t: note.h * this.import.size / 100 /* options.noteSize*/,
             }).add(pos),
-            z,
+            [z],
             1,
         )
 

@@ -12,6 +12,11 @@ export class FlickNote extends Note {
         nextRef: { name: "next", type: Number }
     })
 
+    preprocess() {
+        super.preprocess()
+        if (options.mirror) this.flickImport.direction *= -1
+    }
+
     render() {
         const time = bpmChanges.at(this.import.beat).time
         const pos = panel.getPos(time)
@@ -25,7 +30,7 @@ export class FlickNote extends Note {
                 b: -note.h /* options.noteSize*/,
                 t: note.h /* options.noteSize*/,
             }).add(pos),
-            z,
+            [z],
             1,
         )
         else skin.sprites.flickRightNote.draw(
@@ -35,7 +40,7 @@ export class FlickNote extends Note {
                 b: -note.h /* options.noteSize*/,
                 t: note.h /* options.noteSize*/,
             }).add(pos),
-            z,
+            [z],
             1,
         )
 

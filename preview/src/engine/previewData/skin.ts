@@ -61,7 +61,7 @@ export const line = (sprite: SkinSprite, beat: number, a: number) => {
             b: -panel.h * 0.0025,
             t: panel.h * 0.0025,
         }).add(pos),
-        layer.simline,
+        [layer.simline],
         a,
     )
 }
